@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tib/components/time_screen.dart';
 import 'package:tib/course_page/screens/course_screen.dart';
 
 import '../home_screen/data/homeScreenData.dart';
@@ -164,17 +163,6 @@ class CourseCard extends StatelessWidget {
                       onPressed: () {
                         List<dynamic> myList = [name, index];
 
-                        //   Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) {
-                        //         return CourseScreen();
-                        //       },
-                        //       settings: RouteSettings(
-                        //         arguments: myList,
-                        //       ),
-                        //     ),
-                        //   );
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
@@ -182,17 +170,10 @@ class CourseCard extends StatelessWidget {
                                 data: myList,
                               );
                             },
-                            // fullscreenDialog: true,
-                            // settings: RouteSettings(
-                            //   arguments: myList,
-                            // ),
                           ),
                         );
                       },
-                      // counter++;
 
-                      // onPressed: () => Get.pushNamed(Routes.courseScreen),
-                      // onPressed: () => Get.toNamed(Routes.courseScreen),
                       child: const Text(
                         'Know More >',
                         style: TextStyle(
