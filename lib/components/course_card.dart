@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tib/components/time_screen.dart';
+import 'package:tib/course_page/screens/course_screen.dart';
 
 import '../home_screen/data/homeScreenData.dart';
 import '../utils/colors.dart';
@@ -177,7 +178,7 @@ class CourseCard extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return TimeScreen(
+                              return CourseScreen(
                                 data: myList,
                               );
                             },
