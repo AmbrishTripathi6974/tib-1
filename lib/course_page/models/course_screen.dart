@@ -6,7 +6,7 @@ class CourseScreenModel {
     {IconData: Icons.handshake_rounded, 'text': 'Internship Assistance'},
     {
       IconData: Icons.calendar_month,
-      'text': '8 Weeks, 1 hr/day (flexible,schedule)'
+      'text': '8 Weeks, 1 hr/day (flexible schedule)'
     }
   ];
 

@@ -133,81 +133,6 @@ class CourseScreen extends StatelessWidget {
                     height: height * 0.03,
                   ),
 
-                  // Row(
-                  //   children: [
-                  //     ActionChip(
-                  //       shape: RoundedRectangleBorder(
-                  //         borderRadius: BorderRadius.circular(30),
-                  //       ),
-                  //       padding: const EdgeInsets.symmetric(
-                  //         vertical: 6,
-                  //         horizontal: 6,
-                  //       ),
-                  //       label: FittedBox(
-                  //         child: Row(
-                  //           children: [
-                  //             model.chips[0][IconData] == Icons.star_rounded
-                  //                 ? Icon(
-                  //                     model.chips[0][IconData],
-                  //                     size: 24,
-                  //                     color: Colors.amber.shade900,
-                  //                   )
-                  //                 : Icon(
-                  //                     model.chips[0][IconData],
-                  //                     size: 24,
-                  //                     color: Colors.black,
-                  //                   ),
-                  //             const SizedBox(
-                  //               width: 10,
-                  //             ),
-                  //             Text(
-                  //               model.chips[0]['text'],
-                  //               style: const TextStyle(
-                  //                   fontSize: 16, color: Colors.black),
-                  //             ),
-                  //           ],
-                  //         ),
-                  //       ),
-                  //     ),
-                  //     const SizedBox(
-                  //       width: 20,
-                  //     ),
-                  //     ActionChip(
-                  //       shape: RoundedRectangleBorder(
-                  //         borderRadius: BorderRadius.circular(30),
-                  //       ),
-                  //       padding: const EdgeInsets.symmetric(
-                  //         vertical: 6,
-                  //         horizontal: 6,
-                  //       ),
-                  //       label: FittedBox(
-                  //         child: Row(
-                  //           children: [
-                  //             model.chips[0][IconData] == Icons.star_rounded
-                  //                 ? Icon(
-                  //                     model.chips[0][IconData],
-                  //                     size: 24,
-                  //                     color: Colors.amber.shade900,
-                  //                   )
-                  //                 : Icon(
-                  //                     model.chips[1][IconData],
-                  //                     size: 24,
-                  //                     color: Colors.black,
-                  //                   ),
-                  //             const SizedBox(
-                  //               width: 10,
-                  //             ),
-                  //             Text(
-                  //               model.chips[0]['text'],
-                  //               style: const TextStyle(
-                  //                   fontSize: 16, color: Colors.black),
-                  //             ),
-                  //           ],
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // )
                   // Expanded(
                   // height: 60,
 
@@ -261,7 +186,6 @@ class CourseScreen extends StatelessWidget {
                   //     }),
                   //   ),
                   // ),
-                  //🥲🥲
 
                   //🥲🥲
                   Expanded(
@@ -327,7 +251,7 @@ class CourseScreen extends StatelessWidget {
                     label: FittedBox(
                       child: Row(
                         children: [
-                          model.chips[0][IconData] == Icons.star_rounded
+                          model.chips[2][IconData] == Icons.star_rounded
                               ? Icon(
                                   model.chips[0][IconData],
                                   size: 24,
@@ -417,15 +341,15 @@ class CourseScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                            height: 40,
-                            padding: const EdgeInsets.all(10),
+                            height: 50,
+                            padding: const EdgeInsets.all(6),
                             decoration: BoxDecoration(
                               color: Colors.lightBlue.shade100,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: SvgPicture.asset(
                               model.courseHighlights[index]['image'],
-                              fit: BoxFit.fitWidth,
+                              fit: BoxFit.contain,
                               width: 40,
                             ),
                           ),

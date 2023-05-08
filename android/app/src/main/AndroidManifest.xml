@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.the_intern_bay.tib">
+    package="com.example.tib">
    <application
         android:label="tib"
         android:name="${applicationName}"
