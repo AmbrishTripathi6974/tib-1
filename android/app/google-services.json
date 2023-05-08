@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "777994466912",
+    "project_id": "the-intern-bay-92ce2",
+    "storage_bucket": "the-intern-bay-92ce2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777994466912:android:8eee0ebf3fd0604f9f7505",
+        "android_client_info": {
+          "package_name": "com.example.tib"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777994466912-7v8v81nnqcu98ktvba3q726sj14oblll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC70KQnSnvtUEZ2a30Q05QdJ4CW7KNT8iI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777994466912-7v8v81nnqcu98ktvba3q726sj14oblll.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
