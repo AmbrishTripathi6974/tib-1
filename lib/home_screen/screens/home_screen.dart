@@ -550,12 +550,10 @@ class AdvantageCard extends StatelessWidget {
         children: [
           Expanded(
             flex: 1,
-            child: CircleAvatar(radius: 30, child: SvgPicture.asset(icon)
-                // Icon(
-                //   icon,
-                //   size: 40,
-                // ),
-                ),
+            child: CircleAvatar(
+              radius: 30,
+              child: SvgPicture.asset(icon),
+            ),
           ),
           Flexible(
             fit: FlexFit.tight,
