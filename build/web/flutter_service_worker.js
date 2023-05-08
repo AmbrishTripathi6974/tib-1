@@ -54,8 +54,13 @@ const RESOURCES = {
 "icons/Icon-maskable-192.png": "5c45c91fccf8fd05fa431a6dd47014e4",
 "icons/Icon-maskable-512.png": "c2163649d39f473a977aea060a16c2ff",
 <<<<<<< HEAD
+<<<<<<< HEAD
 "index.html": "1b5dd398068db2fd0054805d8b16d8ab",
 "/": "1b5dd398068db2fd0054805d8b16d8ab",
+=======
+"index.html": "285314ceffced89a90d79b9facbbc0f7",
+"/": "285314ceffced89a90d79b9facbbc0f7",
+>>>>>>> parent of 5c2376f (Reverting the changes to the previous one)
 "main.dart.js": "6205dd83b9cad7554bdf807ac3c8bebf",
 =======
 "index.html": "a0a75ff859b2ba52d0d14d162d28d39f",
