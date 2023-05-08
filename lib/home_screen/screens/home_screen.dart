@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tib/components/copyright_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../about_us_page/screens/about_us_screen.dart';
@@ -444,24 +445,8 @@ class HomeScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                // const Text.rich(
-                //   TextSpan(
-                //     text: '🫵 Interested, Know more',
-                //     style: TextStyle(
-                //       fontSize: 16,
-                //       fontWeight: FontWeight.w400,
-                //     ),
-                //     children: [
-                //       TextSpan(
-                //         text: '  About Us',
-                //         style: TextStyle(
-                //           fontSize: 20,
-                //           fontWeight: FontWeight.w900,
-                //         ),
-                //       )
-                //     ],
-                //   ),
-                // ),
+
+                //🥲🥲About Us Links
                 Container(
                   padding: const EdgeInsets.only(bottom: 20, top: 10),
                   child: Row(
@@ -470,9 +455,8 @@ class HomeScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () => launchUrl(
                           Uri.parse(
-                              'https://www.linkedin.com/in/theinternbay/'),
+                              'https://www.linkedin.com/company/theinternbay/'),
                           mode: LaunchMode.externalApplication,
-                          // webOnlyWindowName: '_blank',
                         ),
                         child: SvgPicture.asset(
                           'assets/icons/linkedIn.svg',
@@ -483,7 +467,6 @@ class HomeScreen extends StatelessWidget {
                         onTap: () => launchUrl(
                           Uri.parse('https://instagram.com/theinternbay'),
                           mode: LaunchMode.externalApplication,
-                          // webOnlyWindowName: '_blank',
                         ),
                         child: SvgPicture.asset(
                           'assets/icons/instagram.svg',
@@ -492,18 +475,9 @@ class HomeScreen extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () async {
-                          // var url =
-                          //     Uri.parse('https://twitter.com/theinternbay');
-                          // if (await canLaunchUrl(url)) {
-                          //   await launchUrl(url);
-                          // } else {
-                          //   throw 'Could not launch $url';
-                          // }
-
                           launchUrl(
                             Uri.parse('https://twitter.com/theinternbay'),
                             mode: LaunchMode.externalApplication,
-                            // webOnlyWindowName: '_blank',
                           );
                         },
                         child: SvgPicture.asset(
@@ -515,7 +489,6 @@ class HomeScreen extends StatelessWidget {
                         onTap: () => launchUrl(
                           Uri.parse('https://youtube.com/@TheInternBay'),
                           mode: LaunchMode.externalApplication,
-                          // webOnlyWindowName: '_blank',
                         ),
                         child: SvgPicture.asset(
                           'assets/icons/youtube.svg',
@@ -525,9 +498,8 @@ class HomeScreen extends StatelessWidget {
                       GestureDetector(
                         onTap: () => launchUrl(
                           Uri.parse(
-                              'https://www.facebook.com/profile.php?id=100092401122401&is_tour_completed=true'),
+                              'https://www.facebook.com/profile.php?id=100092638414693&mibextid=ZbWKwL'),
                           mode: LaunchMode.externalApplication,
-                          // webOnlyWindowName: '_blank',
                         ),
                         child: SvgPicture.asset(
                           'assets/icons/facebook.svg',
@@ -539,32 +511,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            //😎🥲🥲😎😎🥲🥲🥲
-            // ),
             // CopyRight
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              color: Colors.deepPurple[300],
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.copyright_rounded),
-                  Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(text: 'Copyright 2023 by '),
-                        TextSpan(
-                          text: 'The Intern Bay',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            copyright
           ],
         ),
       ),
