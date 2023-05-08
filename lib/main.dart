@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tib/home_screen/screens/home_screen.dart';
 import 'package:tib/splash_screen/screens/splash_screen.dart';
 // import 'package:firebase_core/firebase_core.dart';
 // import 'firebase_options.dart';
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
       //   '/aboutus': (context) => const AboutUsScreen(),
       // },
       // home: GetPlatform.isWeb ? HomeScreen() : SplashScreen(),
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }
