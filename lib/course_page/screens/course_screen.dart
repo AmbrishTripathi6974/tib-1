@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
 import '../../components/copyright_widget.dart';
+import '../../components/drawer_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timelines/timelines.dart';
 
@@ -12,12 +14,16 @@ class CourseScreen extends StatelessWidget {
   final List data;
   final CourseScreenModel model = CourseScreenModel();
   CourseScreen({super.key, required this.data});
+  // final List data = Get.arguments;
 
   @override
   Widget build(BuildContext context) {
+    // final List<dynamic> data =
+    //     ModalRoute.of(context)?.settings.arguments as List<dynamic>;
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      //App Bar
       appBar: AppBar(
         leading: Container(
           margin: EdgeInsets.only(left: width * 0.01),
@@ -48,7 +54,7 @@ class CourseScreen extends StatelessWidget {
 
             Container(
               height: height * 0.6,
-              width: double.maxFinite,
+              width: width * 1,
               padding: const EdgeInsets.all(30),
               color: Colors.tealAccent[300],
               child: Column(
@@ -128,6 +134,81 @@ class CourseScreen extends StatelessWidget {
                     height: height * 0.03,
                   ),
 
+                  // Row(
+                  //   children: [
+                  //     ActionChip(
+                  //       shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(30),
+                  //       ),
+                  //       padding: const EdgeInsets.symmetric(
+                  //         vertical: 6,
+                  //         horizontal: 6,
+                  //       ),
+                  //       label: FittedBox(
+                  //         child: Row(
+                  //           children: [
+                  //             model.chips[0][IconData] == Icons.star_rounded
+                  //                 ? Icon(
+                  //                     model.chips[0][IconData],
+                  //                     size: 24,
+                  //                     color: Colors.amber.shade900,
+                  //                   )
+                  //                 : Icon(
+                  //                     model.chips[0][IconData],
+                  //                     size: 24,
+                  //                     color: Colors.black,
+                  //                   ),
+                  //             const SizedBox(
+                  //               width: 10,
+                  //             ),
+                  //             Text(
+                  //               model.chips[0]['text'],
+                  //               style: const TextStyle(
+                  //                   fontSize: 16, color: Colors.black),
+                  //             ),
+                  //           ],
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     const SizedBox(
+                  //       width: 20,
+                  //     ),
+                  //     ActionChip(
+                  //       shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(30),
+                  //       ),
+                  //       padding: const EdgeInsets.symmetric(
+                  //         vertical: 6,
+                  //         horizontal: 6,
+                  //       ),
+                  //       label: FittedBox(
+                  //         child: Row(
+                  //           children: [
+                  //             model.chips[0][IconData] == Icons.star_rounded
+                  //                 ? Icon(
+                  //                     model.chips[0][IconData],
+                  //                     size: 24,
+                  //                     color: Colors.amber.shade900,
+                  //                   )
+                  //                 : Icon(
+                  //                     model.chips[1][IconData],
+                  //                     size: 24,
+                  //                     color: Colors.black,
+                  //                   ),
+                  //             const SizedBox(
+                  //               width: 10,
+                  //             ),
+                  //             Text(
+                  //               model.chips[0]['text'],
+                  //               style: const TextStyle(
+                  //                   fontSize: 16, color: Colors.black),
+                  //             ),
+                  //           ],
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // )
                   // Expanded(
                   // height: 60,
 
@@ -181,6 +262,7 @@ class CourseScreen extends StatelessWidget {
                   //     }),
                   //   ),
                   // ),
+                  //🥲🥲
 
                   //🥲🥲
                   Expanded(
@@ -246,7 +328,7 @@ class CourseScreen extends StatelessWidget {
                     label: FittedBox(
                       child: Row(
                         children: [
-                          model.chips[2][IconData] == Icons.star_rounded
+                          model.chips[0][IconData] == Icons.star_rounded
                               ? Icon(
                                   model.chips[0][IconData],
                                   size: 24,
@@ -337,15 +419,15 @@ class CourseScreen extends StatelessWidget {
                         children: [
                           Container(
                             height: 40,
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Colors.lightBlue.shade100,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: SvgPicture.asset(
                               model.courseHighlights[index]['image'],
-                              fit: BoxFit.contain,
-                              width: 30,
+                              fit: BoxFit.fitWidth,
+                              width: 40,
                             ),
                           ),
                           const SizedBox(
