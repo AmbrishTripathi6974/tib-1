@@ -6,7 +6,7 @@ List rewards = [
   {'image': 'assets/icons/10%.svg', 'data': 'Your Friend gets 10% extra off'},
   {
     'image': 'assets/icons/rewards.svg',
-    'data': 'Unlocks additional special rewards'
+    'data': 'Unlock additional special rewards'
   },
 ];
 
@@ -15,28 +15,20 @@ List howDoesItWork = [
     'image': 'assets/images/invite.png',
     'heading': '1. Invite Friends',
     'description':
-        'Use the referral link or coupon code to invite friends to The Intern Bay platform',
+        'Use the referral link or coupon code to invite friends on The Intern Bay platform',
   },
   {
     'image': 'assets/images/enroll.png',
     'heading': '2. Your Friends enroll',
-    'description': 'And get 10% off on their training fee',
+    'description': 'Get 10% off on their training fee',
   },
   {
     'image': 'assets/images/earn.png',
     'heading': '3. Earn Rewards',
     'description':
-        'Earn Rs.100 per successfull referral.And there are special rewards to grab!! ',
+        'Earn Rs.100 per successfull referral and get some special rewards to grab!! ',
   }
 ];
-
-// List goodies = [
-//   {
-//     'image': 'assets/icons/',
-//     'heading': '',
-//     'level': '',
-//   }
-// ];
 
 List goodies = [
   {

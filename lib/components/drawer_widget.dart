@@ -19,38 +19,29 @@ class DrawerWidget extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.deepPurple[200],
+              color: Colors.blue[200],
+              image: const DecorationImage(
+                  image: AssetImage('assets/icons/the_intern_bay_logo.png')),
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                CircleAvatar(
-                  radius: 30,
-                  child: Text(
-                    'M',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                ),
                 SizedBox(
                   height: 12,
                 ),
                 Text(
-                  'User',
-                  style: TextStyle(fontSize: 18),
+                  'The Intern Bay',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 )
               ],
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text(' My Profile '),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.book),
-            title: const Text(' Explore Courses '),
+            leading: const Icon(Icons.person_4_rounded),
+            title: const Text(' Campus Ambassador '),
             onTap: () {
               Navigator.push(
                 context,
@@ -60,26 +51,11 @@ class DrawerWidget extends StatelessWidget {
                   },
                 ),
               );
-              // Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.workspace_premium),
-            title: const Text(' Go Premium '),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.video_label),
-            title: const Text(' Saved Videos '),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.edit),
-            title: const Text(' Edit Profile '),
+            title: const Text('Scholarship'),
             onTap: () {
               Navigator.pop(context);
             },
@@ -96,13 +72,6 @@ class DrawerWidget extends StatelessWidget {
                   },
                 ),
               );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.logout),
-            title: const Text('LogOut'),
-            onTap: () {
-              Navigator.pop(context);
             },
           ),
         ],
