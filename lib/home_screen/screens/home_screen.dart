@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../about_us_page/screens/about_us_screen.dart';
 import '../../components/app_bar.dart';
 import '../../components/course_card.dart';
+import '../../components/drawer_widget.dart';
 import '../../constants/colors.dart';
 import '../../constants/styles.dart';
 import '../../utils/colors.dart';
@@ -516,7 +517,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      // endDrawer: const DrawerWidget(), //Drawer,
+      endDrawer: const DrawerWidget(), //Drawer,
     );
   }
 }

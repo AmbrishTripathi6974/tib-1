@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tib/offer_page/offer_page.dart';
 
 import '../about_us_page/screens/about_us_screen.dart';
 
@@ -51,7 +52,15 @@ class DrawerWidget extends StatelessWidget {
             leading: const Icon(Icons.book),
             title: const Text(' Explore Courses '),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const OfferPage();
+                  },
+                ),
+              );
+              // Navigator.pop(context);
             },
           ),
           ListTile(
