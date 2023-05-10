@@ -41,11 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: SizedBox(
         height: double.maxFinite,
         width: double.maxFinite,
-        child:
-            //  Hero(
-            //   tag: 'logo',
-            //   child:
-            Image.asset(
+        child: Image.asset(
           'assets/icons/the_intern_bay_logo.png',
         ),
       ),

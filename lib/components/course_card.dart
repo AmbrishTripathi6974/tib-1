@@ -141,7 +141,7 @@ class CourseCard extends StatelessWidget {
                         ),
                         FittedBox(
                           child: Text(
-                            '15th May 2023',
+                            '20th May 2023',
                             style: TextStyle(
                                 fontWeight: FontWeight.w600, fontSize: 18),
                           ),
