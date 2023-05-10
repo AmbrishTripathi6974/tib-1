@@ -19,6 +19,7 @@ class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    Size _size = MediaQuery.of(context).size;
     return AspectRatio(
       aspectRatio: 0.6,
       child: Container(
@@ -173,13 +174,15 @@ class CourseCard extends StatelessWidget {
                           ),
                         );
                       },
-
-                      child: const Text(
-                        'Know More >',
-                        style: TextStyle(
-                          color: softwhite,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
+                      
+                      child: FittedBox(
+                        child: const Text(
+                          'Know More >',
+                          style: TextStyle(
+                            color: softwhite,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
-class CourseScreenModel {
+class CourseScreenModel{
   List chips = [
     {IconData: Icons.star_rounded, 'text': '4.1'},
     {IconData: Icons.handshake_rounded, 'text': 'Internship Assistance'},

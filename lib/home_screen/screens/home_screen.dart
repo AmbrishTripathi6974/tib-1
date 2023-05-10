@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tib/components/copyright_widget.dart';
+import 'package:tib/constants/responsive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../about_us_page/screens/about_us_screen.dart';
@@ -22,77 +23,63 @@ class HomeScreen extends StatelessWidget {
     // print(stashed);
     return Scaffold(
       appBar: appBarWidget(width),
-      body: SizedBox(
-        child: ListView(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+      body: Responsive(
+        mobile: Container(
+          child: SizedBox(
+            child: ListView(
               children: [
-                Stack(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    ClipPath(
-                      clipper: CustomClipPath(),
-                      child: Container(
-                        color: Colors.lightBlue.shade100,
-                        padding: const EdgeInsets.only(
-                            left: 20, right: 20, bottom: 10),
-                        width: double.maxFinite,
-                        height: height * 0.8,
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(
-                          top: 20, left: 20, right: 20, bottom: 10),
-                      child: Column(
-                        children: [
-                          const FittedBox(
-                            child: Text(
-                              'Empower Your Skills',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 30),
-                              maxLines: 1,
-                              textAlign: TextAlign.justify,
-                            ),
+                    Stack(
+                      children: [
+                        ClipPath(
+                          clipper: CustomClipPath(),
+                          child: Container(
+                            color: Colors.lightBlue.shade100,
+                            padding: const EdgeInsets.only(
+                                left: 20, right: 20, bottom: 10),
+                            width: double.maxFinite,
+                            height: height * 0.8,
                           ),
-
-                          const FittedBox(
-                            child: Text(
-                              'With One Click',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 30),
-                              maxLines: 2,
-                              textAlign: TextAlign.justify,
-                            ),
-                          ),
-                          SizedBox(
-                            height: height * 0.02,
-                          ),
-
-                          // Upper Portion about the Website
-                          RichText(
-                            text: const TextSpan(
-                              text: 'Learn',
-                              style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.black,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: ' with the Real Work Experince.',
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 20, left: 20, right: 20, bottom: 10),
+                          child: Column(
+                            children: [
+                              const FittedBox(
+                                child: Text(
+                                  'Empower Your Skills',
                                   style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 30),
+                                  maxLines: 1,
+                                  textAlign: TextAlign.justify,
                                 ),
-                                TextSpan(text: '\n'),
-                                TextSpan(
-                                  text: 'Build',
+                              ),
+
+                              const FittedBox(
+                                child: Text(
+                                  'With One Click',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 30),
+                                  maxLines: 2,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 0.02,
+                              ),
+
+                              // Upper Portion about the Website
+                              RichText(
+                                text: const TextSpan(
+                                  text: 'Learn',
                                   style: TextStyle(
                                     fontSize: 22,
                                     fontWeight: FontWeight.w800,
@@ -100,8 +87,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text:
-                                          ' professional projects like the top 1% developers',
+                                      text: ' with the Real Work Experince.',
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.normal,
@@ -109,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                     TextSpan(text: '\n'),
                                     TextSpan(
-                                      text: 'Grab',
+                                      text: 'Build',
                                       style: TextStyle(
                                         fontSize: 22,
                                         fontWeight: FontWeight.w800,
@@ -118,402 +104,1435 @@ class HomeScreen extends StatelessWidget {
                                       children: [
                                         TextSpan(
                                           text:
-                                              ' paid Internship with the good Stipend',
+                                              ' professional projects like the top 1% developers',
                                           style: TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.normal,
                                           ),
                                         ),
+                                        TextSpan(text: '\n'),
+                                        TextSpan(
+                                          text: 'Grab',
+                                          style: TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.black,
+                                          ),
+                                          children: [
+                                            TextSpan(
+                                              text:
+                                                  ' paid Internship with the good Stipend',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                            ),
+                                          ],
+                                        )
                                       ],
                                     )
                                   ],
-                                )
+                                ),
+                              ),
+
+                              //Buttton to scroll down to the courses
+                              SizedBox(height: height * 0.03),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: buttonColor,
+                                  shadowColor: buttonColor,
+                                  elevation: 50,
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40, vertical: 15),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Scrollable.ensureVisible(
+                                    _containerKey.currentContext!,
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeInOut,
+                                  );
+                                },
+                                child: const Text(
+                                  'Explore Programs',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.black),
+                                ),
+                              ),
+
+                              // Animation with an Image
+                              SizedBox(
+                                width: double.maxFinite,
+                                height: height * 0.4,
+                                child: Image.asset('assets/images/789.png'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // ),
+                    //   ],
+                    // ),
+                    //🥲🥲🥲🥲🥲
+                    Container(
+                      width: width * 0.8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        // color: Colors.teal.shade100,
+                        color: Colors.blue.shade300,
+                        // color: Colors.lightBlue.shade100,
+                        // Colors.greenAccent.shade400,
+                      ),
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          const Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text:
+                                      'Expand your skills, broaden your horizons - ',
+                                ),
+                                TextSpan(
+                                  text: 'The Intern Bay',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                                TextSpan(text: ', where learning never ends.')
                               ],
                             ),
+                            style: paraTextStyle,
+                            textAlign: TextAlign.center,
                           ),
-
-                          //Buttton to scroll down to the courses
-                          SizedBox(height: height * 0.03),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: buttonColor,
-                              shadowColor: buttonColor,
-                              elevation: 50,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 40, vertical: 15),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                          SizedBox(
+                            height: height * 0.03,
+                          ),
+                          const FittedBox(
+                            child: Text(
+                              'NO MATTER WHAT IT TAKES',
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.white60,
                               ),
                             ),
-                            onPressed: () {
-                              Scrollable.ensureVisible(
-                                _containerKey.currentContext!,
-                                duration: const Duration(milliseconds: 500),
-                                curve: Curves.easeInOut,
+                          ),
+                          SizedBox(
+                            height: height * 0.04,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/9.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Modules design by experts',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/10.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Mentoring & doubt solving session',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/11.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Live classes with Recorded lectures',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * 0.04,
+                    ),
+
+                    //💻Courses Component
+                    Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(10),
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.pink[50],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            key: _containerKey,
+                            child: const Text(
+                              'Popular Courses',
+                              style: headingStyle,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          ...List.generate(
+                            courseModelData.length,
+                            (index) {
+                              return Container(
+                                margin: const EdgeInsets.only(bottom: 20),
+                                child: CourseCard(
+                                  name: courseModelData[index].name,
+                                  image: courseModelData[index].image,
+                                  index: index,
+                                ),
                               );
                             },
-                            child: const Text(
-                              'Explore Programs',
-                              style:
-                                  TextStyle(fontSize: 20, color: Colors.black),
-                            ),
-                          ),
-
-                          // Animation with an Image
-                          SizedBox(
-                            width: double.maxFinite,
-                            height: height * 0.4,
-                            child: Image.asset('assets/images/789.png'),
                           ),
                         ],
                       ),
                     ),
-                  ],
-                ),
+                    SizedBox(
+                      height: height * 0.04,
+                    ),
+                    Container(
+                      color: Colors.lightBlue.shade100,
+                      width: double.maxFinite,
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'The Intern Bay Advantanges',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 20),
+                          const Text(
+                            '100% online courses led with the mentorship',
+                            textAlign: TextAlign.start,
+                          ),
+                          const SizedBox(height: 20),
+                          ...List.generate(
+                              advantageCardData.length,
+                              (index) => AdvantageCard(
+                                  icon: advantageCardData[index]['image'],
+                                  heading: advantageCardData[index]['heading'],
+                                  description: advantageCardData[index]
+                                      ['description']))
+                        ],
+                      ),
+                    ),
 
-                // ),
-                //   ],
-                // ),
-                //🥲🥲🥲🥲🥲
-                Container(
-                  width: width * 0.8,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    // color: Colors.teal.shade100,
-                    color: Colors.blue.shade300,
-                    // color: Colors.lightBlue.shade100,
-                    // Colors.greenAccent.shade400,
-                  ),
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      const Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                              text:
-                                  'Expand your skills, broaden your horizons - ',
-                            ),
-                            TextSpan(
-                              text: 'The Intern Bay',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontStyle: FontStyle.italic,
-                              ),
-                            ),
-                            TextSpan(text: ', where learning never ends.')
-                          ],
-                        ),
-                        style: paraTextStyle,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: height * 0.03,
-                      ),
-                      const FittedBox(
-                        child: Text(
-                          'NO MATTER WHAT IT TAKES',
-                          style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white60,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: height * 0.04,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.lightBlue.shade100,
-                              ),
-                              child: SvgPicture.asset(
-                                'assets/icons/9.svg',
-                                height: 60,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const Expanded(
-                            flex: 4,
-                            child: Text(
-                              'Modules design by experts',
-                              style: TextStyle(color: Colors.white60),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: height * 0.02,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.lightBlue.shade100,
-                              ),
-                              child: SvgPicture.asset(
-                                'assets/icons/10.svg',
-                                height: 60,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const Expanded(
-                            flex: 4,
-                            child: Text(
-                              'Mentoring & doubt solving session',
-                              style: TextStyle(color: Colors.white60),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: height * 0.02,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.lightBlue.shade100,
-                              ),
-                              child: SvgPicture.asset(
-                                'assets/icons/11.svg',
-                                height: 60,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const Expanded(
-                            flex: 4,
-                            child: Text(
-                              'Live classes with Recorded lectures',
-                              style: TextStyle(color: Colors.white60),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: height * 0.04,
-                ),
-
-                //💻Courses Component
-                Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(10),
-                  width: double.maxFinite,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.pink[50],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        key: _containerKey,
-                        child: const Text(
-                          'Popular Courses',
+                    // 🕵️ Get In Touch Section
+                    Column(
+                      children: const [
+                        Text(
+                          'The Intern Bay',
                           style: headingStyle,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      ...List.generate(
-                        courseModelData.length,
-                        (index) {
-                          return Container(
-                            margin: const EdgeInsets.only(bottom: 20),
-                            child: CourseCard(
-                              name: courseModelData[index].name,
-                              image: courseModelData[index].image,
-                              index: index,
-                            ),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: height * 0.04,
-                ),
-                Container(
-                  color: Colors.lightBlue.shade100,
-                  width: double.maxFinite,
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'The Intern Bay Advantanges',
-                        style: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 20),
-                      const Text(
-                        '100% online courses led with the mentorship',
-                        textAlign: TextAlign.start,
-                      ),
-                      const SizedBox(height: 20),
-                      ...List.generate(
-                          advantageCardData.length,
-                          (index) => AdvantageCard(
-                              icon: advantageCardData[index]['image'],
-                              heading: advantageCardData[index]['heading'],
-                              description: advantageCardData[index]
-                                  ['description']))
-                    ],
-                  ),
-                ),
-
-                // 🕵️ Get In Touch Section
-                Column(
-                  children: const [
-                    Text(
-                      'The Intern Bay',
-                      style: headingStyle,
-                    ),
-                    Text(
-                      'Empower your skills, with one click',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-                Divider(
-                  height: 10,
-                  indent: width * 0.08,
-                  endIndent: width * 0.08,
-                  thickness: 2,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      '🫵 Interested, Know more',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const AboutUsScreen();
-                            },
+                        Text(
+                          'Empower your skills, with one click',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
                           ),
-                        );
-                      },
-                      child: const Text(
-                        '  About Us',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
                         ),
+                      ],
+                    ),
+                    Divider(
+                      height: 10,
+                      indent: width * 0.08,
+                      endIndent: width * 0.08,
+                      thickness: 2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          '🫵 Interested, Know more',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const AboutUsScreen();
+                                },
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            '  About Us',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+
+                    //🥲🥲About Us Links
+                    Container(
+                      padding: const EdgeInsets.only(bottom: 20, top: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse(
+                                  'https://www.linkedin.com/company/theinternbay/'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/linkedIn.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse('https://instagram.com/theinternbay'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/instagram.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () async {
+                              launchUrl(
+                                Uri.parse('https://twitter.com/theinternbay'),
+                                mode: LaunchMode.externalApplication,
+                              );
+                            },
+                            child: SvgPicture.asset(
+                              'assets/icons/twitter.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse('https://youtube.com/@TheInternBay'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/youtube.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse(
+                                  'https://www.facebook.com/profile.php?id=100092638414693&mibextid=ZbWKwL'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/facebook.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                        ],
                       ),
-                    )
+                    ),
                   ],
                 ),
-
-                //🥲🥲About Us Links
-                Container(
-                  padding: const EdgeInsets.only(bottom: 20, top: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GestureDetector(
-                        onTap: () => launchUrl(
-                          Uri.parse(
-                              'https://www.linkedin.com/company/theinternbay/'),
-                          mode: LaunchMode.externalApplication,
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/icons/linkedIn.svg',
-                          width: width * 0.1,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => launchUrl(
-                          Uri.parse('https://instagram.com/theinternbay'),
-                          mode: LaunchMode.externalApplication,
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/icons/instagram.svg',
-                          width: width * 0.1,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () async {
-                          launchUrl(
-                            Uri.parse('https://twitter.com/theinternbay'),
-                            mode: LaunchMode.externalApplication,
-                          );
-                        },
-                        child: SvgPicture.asset(
-                          'assets/icons/twitter.svg',
-                          width: width * 0.1,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => launchUrl(
-                          Uri.parse('https://youtube.com/@TheInternBay'),
-                          mode: LaunchMode.externalApplication,
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/icons/youtube.svg',
-                          width: width * 0.1,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => launchUrl(
-                          Uri.parse(
-                              'https://www.facebook.com/profile.php?id=100092638414693&mibextid=ZbWKwL'),
-                          mode: LaunchMode.externalApplication,
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/icons/facebook.svg',
-                          width: width * 0.1,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // CopyRight
+                copyright
               ],
             ),
-            // CopyRight
-            copyright
-          ],
+          ),
+        ),
+        tablet: Container(
+          child: SizedBox(
+            child: ListView(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Stack(
+                      children: [
+                        ClipPath(
+                          clipper: CustomClipPath(),
+                          child: Container(
+                            color: Colors.lightBlue.shade100,
+                            padding: const EdgeInsets.only(
+                                left: 20, right: 20, bottom: 10),
+                            width: double.maxFinite,
+                            height: height * 0.8,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 20, left: 20, right: 20, bottom: 10),
+                          child: Column(
+                            children: [
+                              const FittedBox(
+                                child: Text(
+                                  'Empower Your Skills',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 30),
+                                  maxLines: 1,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+
+                              const FittedBox(
+                                child: Text(
+                                  'With One Click',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 30),
+                                  maxLines: 2,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 0.02,
+                              ),
+
+                              // Upper Portion about the Website
+                              RichText(
+                                text: const TextSpan(
+                                  text: 'Learn',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.black,
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: ' with the Real Work Experince.',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                    TextSpan(text: '\n'),
+                                    TextSpan(
+                                      text: 'Build',
+                                      style: TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.w800,
+                                        color: Colors.black,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              ' professional projects like the top 1% developers',
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                        TextSpan(text: '\n'),
+                                        TextSpan(
+                                          text: 'Grab',
+                                          style: TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.black,
+                                          ),
+                                          children: [
+                                            TextSpan(
+                                              text:
+                                                  ' paid Internship with the good Stipend',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+
+                              //Buttton to scroll down to the courses
+                              SizedBox(height: height * 0.03),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: buttonColor,
+                                  shadowColor: buttonColor,
+                                  elevation: 50,
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40, vertical: 15),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Scrollable.ensureVisible(
+                                    _containerKey.currentContext!,
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeInOut,
+                                  );
+                                },
+                                child: const Text(
+                                  'Explore Programs',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.black),
+                                ),
+                              ),
+
+                              // Animation with an Image
+                              SizedBox(
+                                width: double.maxFinite,
+                                height: height * 0.4,
+                                child: Image.asset('assets/images/789.png'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // ),
+                    //   ],
+                    // ),
+                    //🥲🥲🥲🥲🥲
+                    Container(
+                      width: width * 0.8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        // color: Colors.teal.shade100,
+                        color: Colors.blue.shade300,
+                        // color: Colors.lightBlue.shade100,
+                        // Colors.greenAccent.shade400,
+                      ),
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          const Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text:
+                                      'Expand your skills, broaden your horizons - ',
+                                ),
+                                TextSpan(
+                                  text: 'The Intern Bay',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                                TextSpan(text: ', where learning never ends.')
+                              ],
+                            ),
+                            style: paraTextStyle,
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: height * 0.03,
+                          ),
+                          const FittedBox(
+                            child: Text(
+                              'NO MATTER WHAT IT TAKES',
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.white60,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: height * 0.04,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/9.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Modules design by experts',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/10.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Mentoring & doubt solving session',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/11.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Live classes with Recorded lectures',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * 0.04,
+                    ),
+
+                    //💻Courses Component
+                    Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(10),
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.pink[50],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            key: _containerKey,
+                            child: const Text(
+                              'Popular Courses',
+                              style: headingStyle,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          SingleChildScrollView(
+                            child: GridView.count(
+                              crossAxisCount: 2, // Number of items per row
+                              childAspectRatio:
+                                  0.6, // Adjust this value to change the width-to-height ratio of each grid item
+                              shrinkWrap: true,
+                              // physics: NeverScrollableScrollPhysics(),
+                              padding: const EdgeInsets.all(8),
+                              children: List.generate(
+                                courseModelData.length,
+                                (index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(
+                                        8.0), // Adjust the padding value as per your preference
+                                    child: CourseCard(
+                                      name: courseModelData[index].name,
+                                      image: courseModelData[index].image,
+                                      index: index,
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: height * 0.04,
+                    ),
+                    Container(
+                      color: Colors.lightBlue.shade100,
+                      width: double.maxFinite,
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'The Intern Bay Advantanges',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 20),
+                          const Text(
+                            '100% online courses led with the mentorship',
+                            textAlign: TextAlign.start,
+                          ),
+                          const SizedBox(height: 20),
+                          ...List.generate(
+                              advantageCardData.length,
+                              (index) => AdvantageCard(
+                                  icon: advantageCardData[index]['image'],
+                                  heading: advantageCardData[index]['heading'],
+                                  description: advantageCardData[index]
+                                      ['description']))
+                        ],
+                      ),
+                    ),
+
+                    // 🕵️ Get In Touch Section
+                    Column(
+                      children: const [
+                        Text(
+                          'The Intern Bay',
+                          style: headingStyle,
+                        ),
+                        Text(
+                          'Empower your skills, with one click',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Divider(
+                      height: 10,
+                      indent: width * 0.08,
+                      endIndent: width * 0.08,
+                      thickness: 2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          '🫵 Interested, Know more',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const AboutUsScreen();
+                                },
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            '  About Us',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+
+                    //🥲🥲About Us Links
+                    Container(
+                      padding: const EdgeInsets.only(bottom: 20, top: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse(
+                                  'https://www.linkedin.com/company/theinternbay/'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/linkedIn.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse('https://instagram.com/theinternbay'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/instagram.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () async {
+                              launchUrl(
+                                Uri.parse('https://twitter.com/theinternbay'),
+                                mode: LaunchMode.externalApplication,
+                              );
+                            },
+                            child: SvgPicture.asset(
+                              'assets/icons/twitter.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse('https://youtube.com/@TheInternBay'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/youtube.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse(
+                                  'https://www.facebook.com/profile.php?id=100092638414693&mibextid=ZbWKwL'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/facebook.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                // CopyRight
+                copyright
+              ],
+            ),
+          ),
+        ),
+        desktop: Container(
+          child: SizedBox(
+            child: ListView(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Stack(
+                      children: [
+                        ClipPath(
+                          clipper: CustomClipPath(),
+                          child: Container(
+                            color: Colors.lightBlue.shade100,
+                            padding: const EdgeInsets.only(
+                                left: 20, right: 20, bottom: 10),
+                            width: double.maxFinite,
+                            height: height * 0.8,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              top: 20, left: 20, right: 20, bottom: 10),
+                          child: Column(
+                            children: [
+                              const FittedBox(
+                                child: Text(
+                                  'Empower Your Skills',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 30),
+                                  maxLines: 1,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+
+                              const FittedBox(
+                                child: Text(
+                                  'With One Click',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 30),
+                                  maxLines: 2,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 0.02,
+                              ),
+
+                              // Upper Portion about the Website
+                              RichText(
+                                text: const TextSpan(
+                                  text: 'Learn',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.black,
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: ' with the Real Work Experince.',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                    TextSpan(text: '\n'),
+                                    TextSpan(
+                                      text: 'Build',
+                                      style: TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.w800,
+                                        color: Colors.black,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              ' professional projects like the top 1% developers',
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                        TextSpan(text: '\n'),
+                                        TextSpan(
+                                          text: 'Grab',
+                                          style: TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.black,
+                                          ),
+                                          children: [
+                                            TextSpan(
+                                              text:
+                                                  ' paid Internship with the good Stipend',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+
+                              //Buttton to scroll down to the courses
+                              SizedBox(height: height * 0.03),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: buttonColor,
+                                  shadowColor: buttonColor,
+                                  elevation: 50,
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40, vertical: 15),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Scrollable.ensureVisible(
+                                    _containerKey.currentContext!,
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeInOut,
+                                  );
+                                },
+                                child: const Text(
+                                  'Explore Programs',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.black),
+                                ),
+                              ),
+
+                              // Animation with an Image
+                              SizedBox(
+                                width: double.maxFinite,
+                                height: height * 0.4,
+                                child: Image.asset('assets/images/789.png'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // ),
+                    //   ],
+                    // ),
+                    //🥲🥲🥲🥲🥲
+                    Container(
+                      width: width * 0.8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        // color: Colors.teal.shade100,
+                        color: Colors.blue.shade300,
+                        // color: Colors.lightBlue.shade100,
+                        // Colors.greenAccent.shade400,
+                      ),
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          const Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text:
+                                      'Expand your skills, broaden your horizons - ',
+                                ),
+                                TextSpan(
+                                  text: 'The Intern Bay',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                                TextSpan(text: ', where learning never ends.')
+                              ],
+                            ),
+                            style: paraTextStyle,
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: height * 0.03,
+                          ),
+                          const FittedBox(
+                            child: Text(
+                              'NO MATTER WHAT IT TAKES',
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.white60,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: height * 0.04,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/9.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Modules design by experts',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/10.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Mentoring & doubt solving session',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.lightBlue.shade100,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/11.svg',
+                                    height: 60,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              const Expanded(
+                                flex: 4,
+                                child: Text(
+                                  'Live classes with Recorded lectures',
+                                  style: TextStyle(color: Colors.white60),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * 0.04,
+                    ),
+
+                    //💻Courses Component
+                    Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(10),
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.pink[50],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            key: _containerKey,
+                            child: const Text(
+                              'Popular Courses',
+                              style: headingStyle,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          GridView.builder(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3, // Number of items per row
+                              childAspectRatio:
+                                  0.6, // Adjust this value to change the width-to-height ratio of each grid item
+                            ),
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemCount: courseModelData.length,
+                            itemBuilder: (context, index) {
+                              return Container(
+                                margin: const EdgeInsets.all(8),
+                                child: CourseCard(
+                                  name: courseModelData[index].name,
+                                  image: courseModelData[index].image,
+                                  index: index,
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: height * 0.04,
+                    ),
+
+                    Container(
+                      color: Colors.lightBlue.shade100,
+                      width: double.maxFinite,
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'The Intern Bay Advantanges',
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 20),
+                          const Text(
+                            '100% online courses led with the mentorship',
+                            textAlign: TextAlign.start,
+                          ),
+                          const SizedBox(height: 20),
+                          ...List.generate(
+                              advantageCardData.length,
+                              (index) => AdvantageCard(
+                                  icon: advantageCardData[index]['image'],
+                                  heading: advantageCardData[index]['heading'],
+                                  description: advantageCardData[index]
+                                      ['description']))
+                        ],
+                      ),
+                    ),
+
+                    // 🕵️ Get In Touch Section
+                    Column(
+                      children: const [
+                        Text(
+                          'The Intern Bay',
+                          style: headingStyle,
+                        ),
+                        Text(
+                          'Empower your skills, with one click',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Divider(
+                      height: 10,
+                      indent: width * 0.08,
+                      endIndent: width * 0.08,
+                      thickness: 2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          '🫵 Interested, Know more',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const AboutUsScreen();
+                                },
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            '  About Us',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+
+                    //🥲🥲About Us Links
+                    Container(
+                      padding: const EdgeInsets.only(bottom: 20, top: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse(
+                                  'https://www.linkedin.com/company/theinternbay/'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/linkedIn.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse('https://instagram.com/theinternbay'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/instagram.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () async {
+                              launchUrl(
+                                Uri.parse('https://twitter.com/theinternbay'),
+                                mode: LaunchMode.externalApplication,
+                              );
+                            },
+                            child: SvgPicture.asset(
+                              'assets/icons/twitter.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse('https://youtube.com/@TheInternBay'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/youtube.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () => launchUrl(
+                              Uri.parse(
+                                  'https://www.facebook.com/profile.php?id=100092638414693&mibextid=ZbWKwL'),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                            child: SvgPicture.asset(
+                              'assets/icons/facebook.svg',
+                              width: width * 0.1,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                // CopyRight
+                copyright
+              ],
+            ),
+          ),
         ),
       ),
       // endDrawer: const DrawerWidget(), //Drawer,
